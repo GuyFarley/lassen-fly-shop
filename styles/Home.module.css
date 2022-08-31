@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: 0 2rem;
 }
 
@@ -10,6 +10,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.current {
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -129,4 +134,4 @@
   .logo img {
     filter: invert(1);
   }
-}
+} */
