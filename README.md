@@ -21,6 +21,8 @@ The purpose of this simple eCommerce-style application is to deepen my understan
 
 ## How to Run This Application
 
+Site is deployed @ <https://lassen-fly-shop.netlify.app>
+
 ## Features / Routes
 
 ## Challenges & Constraints
