@@ -6,6 +6,7 @@ export const itemList = [
     description: 'Copper John Nymph',
     category: 'Nymphs',
     inventory: 20,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const itemList = [
     description: 'Prince Nymph',
     category: 'Nymphs',
     inventory: 23,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const itemList = [
     description: 'Hare\'s Ear',
     category: 'Nymphs',
     inventory: 33,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const itemList = [
     description: 'PMD Emerger',
     category: 'Emergers',
     inventory: 17,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const itemList = [
     description: 'Blue Winged Olive Emerger',
     category: 'Emergers',
     inventory: 12,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ export const itemList = [
     description: 'Parachute Caddis Emerger',
     category: 'Emergers',
     inventory: 16,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ export const itemList = [
     description: 'Parachute Adams',
     category: 'Dry Flies',
     inventory: 27,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ export const itemList = [
     description: 'Elk Hair Caddis',
     category: 'Dry Flies',
     inventory: 32,
+    imageUrl: '/copper_john.jpg'
   },
   {
     id: 9,
@@ -70,5 +78,6 @@ export const itemList = [
     description: 'Parachute Purple Haze',
     category: 'Dry Flies',
     inventory: 15,
+    imageUrl: '/copper_john.jpg'
   },
 ]

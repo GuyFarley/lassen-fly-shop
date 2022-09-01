@@ -20,10 +20,12 @@ export default function Home({ allItemsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p className={utilStyles.subtitle}>The hottest patterns guaranteed to put fish in your net!</p>
-        <div className={styles.current}>
-          <h2 className={utilStyles.headingLg}>Current Items in Stock</h2>
+      <section>
+        <div className={utilStyles.subtitle}>
+          <p className={utilStyles.listItem}>The hottest patterns guaranteed to put fish in your net!</p>
+        </div>
+        <div className={styles.selectionHeader}>
+          <h2 className={utilStyles.headingLg}>Shop Our Selection Below</h2>
         </div>
         <div className={styles.grid}>
           {allItemsData.map((item) => (
