@@ -6,7 +6,7 @@ export const itemList = [
     description: 'Copper John Nymph',
     category: 'Nymphs',
     inventory: 20,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/copper_john.jpg'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const itemList = [
     description: 'Prince Nymph',
     category: 'Nymphs',
     inventory: 23,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/prince_nymph.png'
   },
   {
     id: 3,
@@ -24,34 +24,34 @@ export const itemList = [
     description: 'Hare\'s Ear',
     category: 'Nymphs',
     inventory: 33,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/hares_ear.png'
   },
   {
     id: 4,
-    title: 'PMD Emerger',
+    title: 'Caddis Emerger',
     price: '$2.25',
-    description: 'PMD Emerger',
+    description: 'Caddis Emerger',
     category: 'Emergers',
     inventory: 17,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/caddis_emerger.png'
   },
   {
     id: 5,
-    title: 'Blue Winged Olive Emerger',
+    title: 'Rabbit Foot Emerger',
     price: '$2.35',
-    description: 'Blue Winged Olive Emerger',
+    description: 'Rabbit Foot Emerger',
     category: 'Emergers',
     inventory: 12,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/rabbit_foot_emerger.png'
   },
   {
     id: 6,
-    title: 'Parachute Caddis Emerger',
+    title: 'Parachute Hopper',
     price: '$2.59',
-    description: 'Parachute Caddis Emerger',
-    category: 'Emergers',
+    description: 'Parachute Hopper',
+    category: 'Dry Flies',
     inventory: 16,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/para_hopper_dry.png'
   },
   {
     id: 7,
@@ -60,24 +60,24 @@ export const itemList = [
     description: 'Parachute Adams',
     category: 'Dry Flies',
     inventory: 27,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/parachute_adams.png'
   },
   {
     id: 8,
-    title: 'Elk Hair Caddis',
+    title: 'Wire Mayfly',
     price: '$2.95',
-    description: 'Elk Hair Caddis',
-    category: 'Dry Flies',
+    description: 'Wire Mayfly',
+    category: 'Nymphs',
     inventory: 32,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/wire_mayfly.png'
   },
   {
     id: 9,
-    title: 'Parachute Purple Haze',
+    title: 'Sparkle Dun',
     price: '$2.49',
-    description: 'Parachute Purple Haze',
+    description: 'Sparkle Dun',
     category: 'Dry Flies',
     inventory: 15,
-    imageUrl: '/copper_john.jpg'
+    imageUrl: '/assets/sparkle_dun_dry.png'
   },
 ]

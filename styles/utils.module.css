@@ -4,7 +4,7 @@
 }
 
 .heading2Xl {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.05rem;
@@ -54,4 +54,9 @@
 
 .lightText {
   color: #666;
+}
+
+.heading2Xl a:hover {
+  text-decoration: none;
+  color: darkblue;
 }
