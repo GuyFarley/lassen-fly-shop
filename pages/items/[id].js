@@ -2,6 +2,7 @@ import { itemList } from '../../data';
 import utilStyles from '../../styles/utils.module.css';
 import styles from '../../components/layout.module.css';
 import Layout from '../../components/layout';
+import Image from 'next/image';
 
 export async function getStaticProps({ params }) {
   const flies = itemList.filter(fly => fly.id.toString() === params.id);
@@ -22,9 +23,14 @@ export async function getStaticPaths() {
 export default function itemPage({ fly }) {
   return (
     <Layout>
-      <div className={styles.container}>
-        <p className={utilStyles.headingXl}>{fly.title}</p>
-      </div>
+      <section className={styles.panel}>
+        <Image src="/copper_john.jpg" alt="test image" layout="responsive" width="100vw" height="70vw" priority="true" />
+        <h2 className={utilStyles.headingLg}>{fly.title}</h2>
+        <p>{fly.description}</p>
+        <p>{fly.inventory}qty in stock!</p>
+        <p>Price: {fly.price}/each</p>
+
+      </section>
     </Layout>
   )
 }
