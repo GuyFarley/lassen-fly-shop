@@ -3,8 +3,8 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const title = 'Lassen Fly Shop';
-export const siteTitle = 'Lassen Fly Shop';
+const title = 'Lassen\'s Fly Shop';
+export const siteTitle = 'Lassen\'s Fly Shop';
 
 export default function Layout({ children, home }) {
   return (
@@ -13,7 +13,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Lassen Fly Shop"
+          content="Lassen\'s Fly Shop"
         />
         <meta name="og:title" content={siteTitle} />
       </Head>
