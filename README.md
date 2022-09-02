@@ -1,4 +1,4 @@
-# Lassen Fly Shop - AWS/Next.js
+# Lassen's Fly Shop - AWS/Next.js
 
 ## Author
 
@@ -8,16 +8,16 @@ Guy Farley
 
 The purpose of this simple eCommerce-style application is to deepen my understanding and skillset in two areas:
 
-1. Use of the **Next.js** framework to build a front end application. Primary goals:
+1. Use of the **Next.js** framework to build a frontend application. Primary goals:
     - Become familiar with navigation between *pages* using the `<Link>` component
     - Increase my knowledge of built-in support for CSS and Sass in Next.js
     - Make use of pre-rendering and data fetching
     - Implement dynamic routes to render an item-specific page based on user's selection
 
-2. Use of specific **AWS** tools for data management on the back end. Primary goals:
-    - To set up an HTTP API through which the front end application can request data
-    - To incorporate an AWS Lambda function that will be triggered by front end
-    - To store and retreive data from a DynamoDB, sending data back to front end application
+2. Use of specific **AWS** tools for data management on the backend. Primary goals:
+    - To set up an HTTP API through which the frontend application can request data
+    - To incorporate a Lambda function that will be triggered by frontend
+    - To store and retreive data from a DynamoDB, sending data back to frontend application
 
 ## How to Run This Application
 
@@ -25,19 +25,21 @@ Site is deployed @ <https://lassen-fly-shop.netlify.app>
 
 ## Features / Routes
 
-- GET requests occur within the AWS API Gateway, which trigger the Lambda function to retreive all item data from DynamoDB. This happens at buildtime, to ensure the browser does not handle the data fetch.
+- GET requests occur within the REST API, which trigger the Lambda function to retreive all item data from DynamoDB. This happens at buildtime, to ensure the browser does not handle the data fetch
 - When a user clicks the name of one of the items on the home page, a dynamic route is created to render specific information on that item within a separate page. This includes a full description, pricing, and a larger photo of the item
 
 ## Challenges & Constraints
 
-- Challenge: Fetching data from the AWS backend within the constraints of Next.js
+- **Challenge:** Fetching data from the AWS backend within the constraints of Next.js
+
   - Since components are pre-rendered in Next.js framework, this data fetch cannot happen in the browser. Instead, the data needs to be fetched at buildtime
   - This happens differently than it would in a standard React application. The data fetch needed to be called inside the getStaticProps function, which runs at buildtime
   - At this point, the data that is sent back from AWS is captured in an object and passed along as props to the Home page (component) for rendering
 
-<!-- ## Learnings
+- **Challenge:** Uploading the Lambda function as a zipped package of files
 
-## Tests -->
+  - Since Dynamoose is a 3rd party ORM and not an AWS program, it needs to be brought in and therefore contributes to a file size of the Lambda function that requires it to be zipped and uploaded (rather than written directly into the AWS code source)
+  - To achieve this, I needed to write the function in VSCode, then zip it up with its package.json and node modules to be uploaded to AWS for use
 
 ## Visual Documentation
 
@@ -45,13 +47,19 @@ Site is deployed @ <https://lassen-fly-shop.netlify.app>
 
 Before determining the data flow of my application, I first created a wireframe to help visualize how the final application would appear to the end user. This was the first step in determining how the app would function, as it required me to think through the user's experience and how they would be best served by the architecture.
 
-It was at this point that I decided it would be best to pull data for all fly items from the DB upon initial page load (I did not yet realize it needed to happen before initial page load) so that the data would be available for pre-rendering of the item-specific pages. This would ensure the information (including photos) would be locked and loaded to ensure the user would not need to wait for that data to load when they visited each item's specific page.
+It was at this point that I decided it would be best to pull data for all fly items from the database upon initial page load (I did not yet realize it needed to happen before initial page load) so that the data would be available for pre-rendering of the item-specific pages. This would ensure the information (including photos) would be locked and loaded to ensure the user would not need to wait for that data to load when they visited each item's specific page.
 
 This also ensured that the API would only need to be hit once during the user's visit, which would help keep costs down.
 
 ![wireframe for Lassen Fly Shop](./public/lassen_wireframe.jpg)
 
 ### Web Request/Response Cycle
+
+I wanted to build a backend server that existed entirely on AWS. To achieve this, I would need to make use of the following **AWS** services:
+
+- **API Gateway** - Here I would create a GET method to handle the fetch call, which was happening inside the getStaticProps() function in the frontend code
+- **Lambda function** - When the API route was hit, it would trigger this Lambda function. The Lambda would perform a READ operation pull all data from the DynamoDB table where all fly items existed
+- **DynamoDB** - The Lambda would interact with DynamoDB via Dynamoose (a 3rd party ORM). A model would be created to represent the fly items held in the database, then the Lambda would use the scan() and exec() methods to read the data. The data would need to be JSON stringified before being sent back to the browser for rendering
 
 ![web request & response cycle for Lassen Fly Shop](./public/lassen_wrrc.png)
 

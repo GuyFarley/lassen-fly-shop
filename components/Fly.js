@@ -12,9 +12,9 @@ export default function Fly(item) {
 
         <Link href={`/items/[id]`} as={`/items/${item.id}`}>{item.title}</Link> ({item.category})
         <br />
-        Inventory: {item.inventory}
+        <b>Inventory:</b> {item.inventory}
         <br />
-        Price: {item.price}
+        <b>Price:</b> ${item.price}
       </div>
     </section>
   )

@@ -27,8 +27,8 @@ export default function itemPage({ fly }) {
         <Image src={fly.imageUrl} alt="test image" layout="responsive" width="100vw" height="70vw" priority="true" />
         <h2 className={utilStyles.headingLg}>{fly.title}</h2>
         <p>{fly.description}</p>
-        <p>{fly.inventory}qty in stock!</p>
-        <p>Price: {fly.price}/each</p>
+        <p>We have <b>{fly.inventory}</b> in stock!</p>
+        <p><b>Price:</b> {fly.price}/each</p>
 
       </section>
     </Layout>
