@@ -39,7 +39,7 @@ Site is deployed @ <https://lassen-fly-shop.netlify.app>
 
 ### Web Request/Response Cycle
 
-![web request & response cycle for Lassen Fly Shop](./public/lassen_wrrc.jpg)
+![web request & response cycle for Lassen Fly Shop](./public/lassen_wrrc.png)
 
 ## Links and Resources
 
@@ -48,3 +48,5 @@ Wireframing and Web Request/Response Cycle: <https://miro.com/app/board/uXjVPbIE
 <https://nextjs.org/docs/getting-started>
 
 <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html>
+
+<https://www.youtube.com/watch?v=zueyEdRZQlk>
