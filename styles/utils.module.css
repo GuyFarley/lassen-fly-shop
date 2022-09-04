@@ -60,3 +60,23 @@
   text-decoration: none;
   color: darkblue;
 }
+
+@media (max-width: 900px) {
+  .headingLg {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin-top: 2rem;
+  }
+
+  .heading2Xl {
+    font-size: 5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    margin: 1rem 0;
+  }
+
+  .listItem {
+    font-size: 2rem;
+  }
+}
