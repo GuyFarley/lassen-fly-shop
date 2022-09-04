@@ -8,7 +8,7 @@ export async function getStaticProps() {
 
   const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
   const data = await res.json();
-  console.log('res: ', res);
+
   return {
     props: {
       allItemsData: data

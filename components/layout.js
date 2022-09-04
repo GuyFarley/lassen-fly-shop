@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const title = 'Lassen\'s Fly Shop';
 export const siteTitle = 'Lassen\'s Fly Shop';
+const footer = "© Guy Farley 2022";
 
 export default function Layout({ children, home }) {
   return (
@@ -42,6 +43,9 @@ export default function Layout({ children, home }) {
           </Link>
         </div>}
       </main>
+      <footer className={styles.footer}>
+        {footer}
+      </footer>
     </div >
   );
 }
