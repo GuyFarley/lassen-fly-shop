@@ -1,8 +1,12 @@
-# Lassen's Fly Shop - AWS/Next.js
+# Lassen's Fly Shop
 
-## Author
+## An eCommerce application built with Next.js and AWS
 
-Guy Farley
+**Author:** Guy Farley
+
+## How to Run This Application
+
+Site is deployed @ <https://lassen-fly-shop.netlify.app>
 
 ## Problem Domain
 
@@ -18,10 +22,6 @@ The purpose of this simple eCommerce-style application is to deepen my understan
     - To set up an HTTP API through which the frontend application can request data
     - To incorporate a Lambda function that will be triggered by frontend
     - To store and retreive data from a DynamoDB, sending data back to frontend application
-
-## How to Run This Application
-
-Site is deployed @ <https://lassen-fly-shop.netlify.app>
 
 ## Features / Routes
 
