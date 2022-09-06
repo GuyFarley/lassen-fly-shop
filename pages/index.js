@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css';
 import styles from '../components/layout.module.css';
 import Fly from '../components/Fly.js';
 
+// initial request for all item data from database - runs at buildtime
 export async function getStaticProps() {
 
   const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
