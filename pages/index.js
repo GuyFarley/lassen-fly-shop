@@ -3,6 +3,8 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import styles from '../components/layout.module.css';
 import Fly from '../components/Fly.js';
+import { FliesContext } from '../context/FliesContext';
+import { useEffect, useContext } from 'react';
 
 // initial request for all item data from database - runs at buildtime
 export async function getStaticProps() {
@@ -18,6 +20,13 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allItemsData }) {
+
+  const { flies, setFlies } = useContext(FliesContext);
+
+  useEffect(() => {
+    setFlies(allItemsData);
+  }, [])
+
   return (
     <Layout home>
       <Head>
@@ -31,8 +40,8 @@ export default function Home({ allItemsData }) {
           <h2 className={utilStyles.headingLg}>Shop Our Selection Below</h2>
         </div>
         <div className={styles.grid}>
-          {allItemsData.map((item) => (
-            <Fly key={item.id} {...item} />
+          {flies.map((fly) => (
+            <Fly key={fly.id} {...fly} />
           ))}
         </div>
       </section>

@@ -1,10 +1,12 @@
-import { itemList } from '../../data';
 import utilStyles from '../../styles/utils.module.css';
 import styles from '../../components/layout.module.css';
 import Layout from '../../components/layout';
 import Image from 'next/image';
 
 export async function getStaticProps({ params }) {
+
+  const res = await fetch(`https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies`);
+  const itemList = await res.json();
 
   const flies = itemList.filter(fly => fly.id.toString() === params.id);
   return {
@@ -15,6 +17,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+
+  const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
+  const itemList = await res.json();
+
   const paths = itemList.map(fly => ({
     params: {
       id: fly.id.toString()
@@ -23,7 +29,10 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 }
 
+
+
 export default function itemPage({ fly }) {
+
   return (
     <Layout>
       <section className={styles.panel}>
