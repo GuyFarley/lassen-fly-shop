@@ -31,18 +31,14 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 }
 
-
-
 export default function ItemPage({ fly }) {
 
   const { flies } = useContext(FliesContext);
   const stateFlies = flies.filter(flyFromState => flyFromState.id.toString() === fly.id);
   const stateFly = stateFlies[0];
-  console.log('stateFly: ', stateFly);
 
   if (stateFly) {
     fly = stateFly;
-    console.log('using stateFly as fly');
   }
 
   return (

@@ -23,9 +23,6 @@ export default function Home({ allItemsData }) {
 
   const { flies, setFlies } = useContext(FliesContext);
 
-  // if (flies.length < 1) {
-  //   setFlies(allItemsData);
-  // }
   useEffect(() => {
     if (flies.length < 1) {
       setFlies(allItemsData);

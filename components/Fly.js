@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from '../components/layout.module.css';
+import utilStyles from '../styles/utils.module.css';
 import Image from 'next/image';
 import { FliesContext } from '../context/FliesContext';
 import { useContext } from 'react';
@@ -15,19 +16,24 @@ export default function Fly(item) {
   return (
     <section className={styles.card}>
       <Image src={item.imageUrl} alt="test image" layout="responsive" width="100vw" height="70vw" priority="true" />
-      <div>
-        <Link
-          href={`/items/[id]`}
-          as={`/items/${item.id}`}
-        >
-          {item.title}
-        </Link> ({item.category})
+      <div className={styles.description}>
+
+        {item.title}
+
         <br />
         <b>Inventory:</b> {item.inventory}
         <br />
         <b>Price:</b> ${item.price}
         <br />
-        <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+      </div>
+      <div className={styles.buttons}>
+        <p className={utilStyles.button} onClick={() => handleAddToCart(item)}>Add to Cart</p>
+        <Link
+          href={`/items/[id]`}
+          as={`/items/${item.id}`}
+        >
+          <p className={utilStyles.button}>Learn More</p>
+        </Link>
       </div>
     </section>
   )
