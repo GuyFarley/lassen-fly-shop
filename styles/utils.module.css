@@ -61,6 +61,15 @@
   color: darkblue;
 }
 
+.button {
+  color: blue;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .headingLg {
     font-size: 2.5rem;
@@ -78,5 +87,10 @@
 
   .listItem {
     font-size: 2rem;
+  }
+
+  .button {
+    font-size: 2rem;
+    line-height: 1.4;
   }
 }

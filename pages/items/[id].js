@@ -2,6 +2,8 @@ import utilStyles from '../../styles/utils.module.css';
 import styles from '../../components/layout.module.css';
 import Layout from '../../components/layout';
 import Image from 'next/image';
+import { FliesContext } from '../../context/FliesContext';
+import { useContext } from 'react';
 
 export async function getStaticProps({ params }) {
 
@@ -29,9 +31,15 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 }
 
+export default function ItemPage({ fly }) {
 
+  const { flies } = useContext(FliesContext);
+  const stateFlies = flies.filter(flyFromState => flyFromState.id.toString() === fly.id);
+  const stateFly = stateFlies[0];
 
-export default function itemPage({ fly }) {
+  if (stateFly) {
+    fly = stateFly;
+  }
 
   return (
     <Layout>
@@ -41,9 +49,8 @@ export default function itemPage({ fly }) {
         <p>{fly.description}</p><br></br>
         <p>We have <b>{fly.inventory}</b> in stock!</p>
         <p><b>Price:</b> {fly.price}/each</p>
-
       </section>
-    </Layout>
-  )
+    </Layout>);
 }
+
 

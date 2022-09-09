@@ -6,11 +6,22 @@ const FliesProvider = ({ children }) => {
 
   const [flies, setFlies] = useState([]);
 
+  const addToCart = (item) => {
+    let updatedFlies = flies.map(fly => {
+      if (item.id === fly.id) {
+        fly.inventory = fly.inventory - 1;
+      }
+      return fly;
+    })
+    setFlies(updatedFlies);
+  }
+
   return (
     <FliesContext.Provider
       value={{
         flies,
-        setFlies
+        setFlies,
+        addToCart
       }}
     >
       {children}
