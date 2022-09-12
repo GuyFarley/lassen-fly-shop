@@ -10,7 +10,9 @@ const FliesProvider = ({ children }) => {
     let updatedFlies = flies.map(fly => {
       if (item.id === fly.id) {
         fly.inventory = fly.inventory - 1;
+        fly.inCart = fly.inCart + 1;
       }
+      console.log(fly);
       return fly;
     })
     setFlies(updatedFlies);
