@@ -28,6 +28,7 @@
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
+  margin-top: 2.2rem;
 }
 
 .borderCircle {
@@ -71,6 +72,13 @@
 }
 
 @media (max-width: 900px) {
+
+  .headingMd {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    margin-top: 2.1rem;
+  }
+
   .headingLg {
     font-size: 2.5rem;
     line-height: 1.4;

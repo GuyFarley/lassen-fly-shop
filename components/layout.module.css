@@ -12,7 +12,17 @@
 
 .selectionHeader {
   display: flex;
-  justify-content: center;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  justify-content: space-between;
+}
+
+.cartSummary {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 3vw;
+  padding-top: 2vw;
 }
 
 .backToHome {
