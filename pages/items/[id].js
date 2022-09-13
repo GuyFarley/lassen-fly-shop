@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 
 export default function ItemPage({ fly }) {
 
-  const { flies } = useContext(FliesContext);
+  const { flies, addToCart } = useContext(FliesContext);
   const stateFlies = flies.filter(flyFromState => flyFromState.id.toString() === fly.id);
   const stateFly = stateFlies[0];
 
@@ -41,14 +41,21 @@ export default function ItemPage({ fly }) {
     fly = stateFly;
   }
 
+  function handleAddToCart(item) {
+    addToCart(item);
+  }
+
   return (
     <Layout>
       <section className={styles.panel}>
         <Image src={fly.imageUrl} alt="test image" layout="responsive" width="100vw" height="70vw" priority="true" />
         <h2 className={utilStyles.headingLg}>{fly.title}</h2>
-        <p>{fly.description}</p><br></br>
+        <p>{fly.description}</p><br />
         <p>We have <b>{fly.inventory}</b> in stock!</p>
-        <p><b>Price:</b> {fly.price}/each</p>
+        <p><b>Price:</b> ${fly.price}/each</p><br />
+        {/* <div className={styles.buttons}> */}
+        <p className={utilStyles.button} onClick={() => handleAddToCart(fly)}>{`Add to Cart (${fly.inCart})`}</p>
+        {/* </div> */}
       </section>
     </Layout>);
 }
