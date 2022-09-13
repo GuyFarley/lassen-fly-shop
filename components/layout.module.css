@@ -4,6 +4,12 @@
   margin: 2rem auto 3rem;
 }
 
+.cart {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -12,9 +18,7 @@
 
 .selectionHeader {
   display: flex;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .cartSummary {
@@ -105,6 +109,13 @@
 }
 
 @media (max-width: 900px) {
+
+  .cart {
+    width: 120%;
+    display: flex;
+    justify-content: right;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;

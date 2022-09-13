@@ -5,14 +5,17 @@ const FliesContext = createContext();
 const FliesProvider = ({ children }) => {
 
   const [flies, setFlies] = useState([]);
-  const [fliesInCart, setFliesInCart] = useState(0);
+  const [cartFlies, setCartFlies] = useState([]);
+  const [cartQty, setCartQty] = useState(0);
 
   const addToCart = (item) => {
+
     let updatedFlies = flies.map(fly => {
       if (item.id === fly.id) {
         fly.inventory = fly.inventory - 1;
         fly.inCart = fly.inCart + 1;
-        setFliesInCart(fliesInCart + 1);
+        setCartQty(cartQty + 1);
+        setCartFlies([...cartFlies, fly]);
       }
       return fly;
     })
@@ -25,8 +28,10 @@ const FliesProvider = ({ children }) => {
         flies,
         setFlies,
         addToCart,
-        fliesInCart,
-        setFliesInCart
+        cartQty,
+        setCartQty,
+        cartFlies,
+        setCartFlies
       }}
     >
       {children}
