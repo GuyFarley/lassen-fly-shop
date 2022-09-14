@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FliesContext } from '../context/FliesContext';
 import { useContext } from 'react';
 
@@ -28,7 +29,6 @@ export default function Layout({ children, home }) {
           <>
             <div className={styles.cart}>
               <Link href="/cart">
-
                 <p className={utilStyles.headingMd}>
                   {`Cart (${cartQty})`}
                 </p>
