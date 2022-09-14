@@ -27,6 +27,9 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
+            <div className={styles.title}>
+              <h1 className={utilStyles.heading2Xl}>{title}</h1>
+            </div>
             <div className={styles.cart}>
               <Link href="/cart">
                 <p className={utilStyles.headingMd}>
@@ -34,10 +37,16 @@ export default function Layout({ children, home }) {
                 </p>
               </Link>
             </div>
-            <h1 className={utilStyles.heading2Xl}>{title}</h1>
           </>
         ) : (
           <>
+            <div className={styles.title}>
+              <h1 className={utilStyles.heading2Xl}>
+                <Link href="/">
+                  <a className={utilStyles.colorInherit}>{title}</a>
+                </Link>
+              </h1>
+            </div>
             <div className={styles.cart}>
               <Link href="/cart">
                 <p className={utilStyles.headingMd}>
@@ -45,11 +54,6 @@ export default function Layout({ children, home }) {
                 </p>
               </Link>
             </div>
-            <h1 className={utilStyles.heading2Xl}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{title}</a>
-              </Link>
-            </h1>
           </>
         )}
       </header>
