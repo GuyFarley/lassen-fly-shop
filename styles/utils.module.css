@@ -27,8 +27,13 @@
 
 .headingMd {
   font-size: 1.2rem;
-  line-height: 1.5;
-  margin-top: 2.2rem;
+  margin: 0;
+  color: blue;
+}
+
+.headingMd:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .borderCircle {
@@ -74,9 +79,8 @@
 @media (max-width: 900px) {
 
   .headingMd {
-    font-size: 2.4rem;
-    line-height: 1.4;
-    margin-top: 2.1rem;
+    font-size: 2rem;
+    margin: 0;
   }
 
   .headingLg {

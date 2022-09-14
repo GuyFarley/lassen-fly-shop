@@ -21,7 +21,7 @@ export async function getStaticProps() {
 
 export default function Home({ allItemsData }) {
 
-  const { flies, setFlies, fliesInCart } = useContext(FliesContext);
+  const { flies, setFlies } = useContext(FliesContext);
 
 
   useEffect(() => {
@@ -41,9 +41,6 @@ export default function Home({ allItemsData }) {
         </div>
         <div className={styles.selectionHeader}>
           <h2 className={utilStyles.headingLg}>Shop Our Selection Below</h2>
-          <p className={utilStyles.headingMd}>
-            {`Cart (${fliesInCart})`}
-          </p>
         </div>
         <div className={styles.grid}>
           {flies.map((fly) => (
