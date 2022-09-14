@@ -53,9 +53,16 @@ export default function ItemPage({ fly }) {
         <p>{fly.description}</p><br />
         <p>We have <b>{fly.inventory}</b> in stock!</p>
         <p><b>Price:</b> ${fly.price}/each</p><br />
-        {/* <div className={styles.buttons}> */}
-        <p className={utilStyles.button} onClick={() => handleAddToCart(fly)}>{`Add to Cart (${fly.inCart})`}</p>
-        {/* </div> */}
+        <p className={utilStyles.button} onClick={() => handleAddToCart(fly)}>
+          {fly.inCart < 1 ? (
+            <>
+              {`Add to Cart`}
+            </>
+          ) : (
+            <>
+              {`Add to Cart (${fly.inCart})`}
+            </>)}
+        </p>
       </section>
     </Layout>);
 }

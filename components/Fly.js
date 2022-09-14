@@ -27,7 +27,16 @@ export default function Fly(item) {
         <br />
       </div>
       <div className={styles.buttons}>
-        <p className={utilStyles.button} onClick={() => handleAddToCart(item)}>{`Add to Cart (${item.inCart})`}</p>
+        <p className={utilStyles.button} onClick={() => handleAddToCart(item)}>
+          {item.inCart < 1 ? (
+            <>
+              {`Add to Cart`}
+            </>
+          ) : (
+            <>
+              {`Add to Cart (${item.inCart})`}
+            </>)}
+        </p>
         <Link
           href={`/items/[id]`}
           as={`/items/${item.id}`}

@@ -1,7 +1,6 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../components/layout.module.css';
 import Layout from '../components/layout';
-import Image from 'next/image';
 import { FliesContext } from '../context/FliesContext';
 import { useContext } from 'react';
 
