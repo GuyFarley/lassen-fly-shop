@@ -15,9 +15,14 @@ export default function Cart() {
   return (
     <Layout>
       <section className={styles.panel}>
-        {cartFlies.map((fly) => (
-          <p key={fly.id}>{fly.title}</p>
-        )
+        {cartFlies.length > 0 ? (
+          cartFlies.map((fly) => (
+            <p key={fly.id}>{fly.title}</p>
+          ))
+        ) : (
+          <div className={styles.emptyCart}>
+            <h2 className={utilStyles.emptyCartFont}>Your cart is empty</h2>
+          </div>
         )}
       </section>
     </Layout>);
