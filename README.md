@@ -41,6 +41,21 @@ The purpose of this simple eCommerce-style application is to deepen my understan
   - Since Dynamoose is a 3rd party ORM and not an AWS program, it needs to be brought in and therefore contributes to a file size of the Lambda function that requires it to be zipped and uploaded (rather than written directly into the AWS code source)
   - To achieve this, I needed to write the function in VSCode, then zip it up with its package.json and node modules to be uploaded to AWS for use
 
+- **Challenge:** Incorporating state via the `useContext` hook
+
+  - As the app was constructed with Next.js to pre-render data using `getStaticProps`, I needed to figure out how to manage state in combination with this pre-rendering. It took a while to wrap my head around when the data needed to be added to state, and how to use that state throughout the app after initial page load.
+  - To manage this, I decided to use conditional statements to evaluate if data yet existed in global state. If so, the page would render that data. If not, the page would use the data pulled from DynamoDB when `getStaticProps` was executed
+
+- **Challenge:** Incorporating Material UI with Next.js
+
+  - Here I leaned heavily on [this article](https://www.geeksforgeeks.org/how-to-use-material-ui-with-next-js/) found on geeksforgeeks.org
+  - Quite a bit of code needed to be added to my app to allow for Material UI to be used without interfering with the Next.js functionality. This required the creation and/or updating of the following files:
+    - `/pages/_document.js`
+    - `/src/theme.js`
+    - `/src/createEmotionCache.js`
+    - `/pages/_app.js`
+  - While I was hesitant to rely so heavily on this additional code, I felt it was worth it to polish up my application visually and to add the table component into my shopping cart so it would display as I envisioned it
+
 ## Visual Documentation
 
 ### Wireframe
@@ -72,3 +87,5 @@ Wireframing and Web Request/Response Cycle: <https://miro.com/app/board/uXjVPbIE
 <https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html>
 
 <https://www.youtube.com/watch?v=zueyEdRZQlk>
+
+<https://www.geeksforgeeks.org/how-to-use-material-ui-with-next-js/>
