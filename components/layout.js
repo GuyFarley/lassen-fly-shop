@@ -12,7 +12,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
-    right: -3,
+    // fontSize: 20,
+    // height: 25,
+    // width: 25,
+    right: -2,
     top: 13,
     border: `2px solid ${theme.palette.background.paper}`,
     padding: '0 4px',
@@ -46,8 +49,8 @@ export default function Layout({ children, home }) {
             <div className={styles.cart}>
               <Link href="/cart">
                 <IconButton aria-label="cart">
-                  <StyledBadge badgeContent={cartQty} color="secondary">
-                    <ShoppingCartIcon />
+                  <StyledBadge badgeContent={cartQty} color="secondary" >
+                    <ShoppingCartIcon fontSize="large" />
                   </StyledBadge>
                 </IconButton>
               </Link>
