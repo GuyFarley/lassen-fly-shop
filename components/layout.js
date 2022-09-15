@@ -69,7 +69,7 @@ export default function Layout({ children, home }) {
               <Link href="/cart">
                 <IconButton aria-label="cart">
                   <StyledBadge badgeContent={cartQty} color="secondary">
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon fontSize="large" />
                   </StyledBadge>
                 </IconButton>
               </Link>
