@@ -2,9 +2,22 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
 import { FliesContext } from '../context/FliesContext';
 import { useContext } from 'react';
+import * as React from 'react';
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
 
 const title = 'Lassen\'s Fly Shop';
 export const siteTitle = 'Lassen\'s Fly Shop';
@@ -32,9 +45,11 @@ export default function Layout({ children, home }) {
             </div>
             <div className={styles.cart}>
               <Link href="/cart">
-                <p className={utilStyles.headingMd}>
-                  {`Cart (${cartQty})`}
-                </p>
+                <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={cartQty} color="secondary">
+                    <ShoppingCartIcon />
+                  </StyledBadge>
+                </IconButton>
               </Link>
             </div>
           </>
@@ -49,9 +64,11 @@ export default function Layout({ children, home }) {
             </div>
             <div className={styles.cart}>
               <Link href="/cart">
-                <p className={utilStyles.headingMd}>
-                  {`Cart (${cartQty})`}
-                </p>
+                <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={cartQty} color="secondary">
+                    <ShoppingCartIcon />
+                  </StyledBadge>
+                </IconButton>
               </Link>
             </div>
           </>
