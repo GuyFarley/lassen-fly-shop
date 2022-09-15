@@ -37,6 +37,10 @@ export default function ItemPage({ fly }) {
   const stateFlies = flies.filter(flyFromState => flyFromState.id.toString() === fly.id);
   const stateFly = stateFlies[0];
 
+  // Check if fly data exists in state
+  // If so, reset 'fly' variable to that data
+  // If not, 'fly' variable remains set to data pulled from
+  // DynamoDB before page rendering
   if (stateFly) {
     fly = stateFly;
   }
