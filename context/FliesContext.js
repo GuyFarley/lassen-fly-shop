@@ -6,6 +6,7 @@ const FliesProvider = ({ children }) => {
 
   const [flies, setFlies] = useState([]);
   const [cartFlies, setCartFlies] = useState([]);
+  const [cartPrice, setCartPrice] = useState(0);
   const [cartQty, setCartQty] = useState(0);
 
   const addToCart = (item) => {
@@ -16,6 +17,7 @@ const FliesProvider = ({ children }) => {
         fly.inCart = fly.inCart + 1;
         setCartQty(cartQty + 1);
         setCartFlies([...cartFlies, fly]);
+        setCartPrice(cartPrice + fly.price);
       }
       return fly;
     })
@@ -31,7 +33,8 @@ const FliesProvider = ({ children }) => {
         cartQty,
         setCartQty,
         cartFlies,
-        setCartFlies
+        setCartFlies,
+        cartPrice
       }}
     >
       {children}
