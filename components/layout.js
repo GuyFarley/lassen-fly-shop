@@ -12,9 +12,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
-    // fontSize: 20,
-    // height: 25,
-    // width: 25,
     right: -2,
     top: 13,
     border: `2px solid ${theme.palette.background.paper}`,
@@ -81,11 +78,6 @@ export default function Layout({ children, home }) {
         <div className={styles.grid}>
           {children}
         </div>
-        {!home && <div className={styles.backToHome}>
-          <Link href="/">
-            <a>Back to Home</a>
-          </Link>
-        </div>}
       </main>
       <footer className={styles.footer}>
         {footer}
