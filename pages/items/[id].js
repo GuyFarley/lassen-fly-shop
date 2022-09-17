@@ -1,3 +1,6 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Link from 'next/link';
 import utilStyles from '../../styles/utils.module.css';
 import styles from '../../components/layout.module.css';
 import Layout from '../../components/layout';
@@ -52,21 +55,28 @@ export default function ItemPage({ fly }) {
   return (
     <Layout>
       <section className={styles.panel}>
-        <Image src={fly.imageUrl} alt="test image" layout="responsive" width="100vw" height="70vw" priority="true" />
+        <Image src={fly.imageUrl} alt={fly.title} layout="responsive" width="100vw" height="70vw" priority="true" />
         <h2 className={utilStyles.headingLg}>{fly.title}</h2>
         <p>{fly.description}</p><br />
+        <p><b>Price:</b> ${fly.price}/each</p>
         <p>We have <b>{fly.inventory}</b> in stock!</p>
-        <p><b>Price:</b> ${fly.price}/each</p><br />
-        <p className={utilStyles.button} onClick={() => handleAddToCart(fly)}>
+        <br />
+        <Button
+          className={styles.addCartButton}
+          size="small"
+          variant="contained" onClick={() => handleAddToCart(fly)}>
           {fly.inCart < 1 ? (
-            <>
-              {`Add to Cart`}
-            </>
+            <>Add to Cart</>
           ) : (
             <>
-              {`Add to Cart (${fly.inCart})`}
+              Add to Cart ({fly.inCart})
             </>)}
-        </p>
+        </Button >
+        <Link
+          href="/">
+          <Button className={styles.learnMoreButton} size="small"
+            variant="contained">Back to Home</Button>
+        </Link>
       </section>
     </Layout>);
 }

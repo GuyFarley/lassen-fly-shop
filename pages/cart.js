@@ -6,7 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Link from 'next/link';
+import Button from '@mui/material/Button';
 import utilStyles from '../styles/utils.module.css';
 import styles from '../components/layout.module.css';
 import Layout from '../components/layout';
@@ -17,8 +18,6 @@ import { useContext } from 'react';
 export default function Cart() {
 
   const { cartFlies, cartQty, cartPrice } = useContext(FliesContext);
-
-  console.log(cartFlies);
 
   return (
     <Layout>
@@ -54,15 +53,20 @@ export default function Cart() {
                   <TableCell align="right">{cartQty}</TableCell>
                   <TableCell align="right">${cartPrice}</TableCell>
                 </TableRow>
-
               </TableBody>
             </Table>
           </TableContainer>
+
         ) : (
           <div className={styles.emptyCart}>
             <h2 className={utilStyles.emptyCartFont}>Your cart is empty</h2>
           </div>
         )}
       </section>
+      <Link
+        href="/">
+        <Button className={styles.cartHomeButton} size="small"
+          variant="contained">Back to Home</Button>
+      </Link>
     </Layout>);
 }

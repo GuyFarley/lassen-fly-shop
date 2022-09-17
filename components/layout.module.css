@@ -21,7 +21,7 @@
   right: 0;
   top: 0;
   margin-right: 18vw;
-  margin-top: 6.7vw;
+  margin-top: 6.5vw;
 }
 
 .selectionHeader {
@@ -71,12 +71,32 @@
   border-color: blue;
 }
 
-
-
 .buttons {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   font-size: .9rem;
+}
+
+.addCartButton {
+  width: 100%;
+  height: 1.5rem;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
+}
+
+.learnMoreButton {
+  background-color: black;
+  width: 100%;
+  height: 1.5rem;
+  margin-bottom: 1vw;
+}
+
+.cartHomeButton {
+  background-color: black;
+  width: 40%;
+  height: 1.5rem;
+  margin-bottom: 1vw;
 }
 
 .logo {
@@ -140,7 +160,7 @@
   }
 
   .card {
-    width: 60vw;
+    width: 50vw;
     font-size: 2rem;
     line-height: 1.5;
   }
@@ -152,9 +172,24 @@
   .buttons {
     display: flex;
     justify-content: space-between;
-    font-size: 1rem;
+    font-size: 2rem;
     margin-left: 2vw;
     margin-right: 2vw;
+  }
+
+  .addCartButton {
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .learnMoreButton {
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .cartHomeButton {
+    height: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .panel {

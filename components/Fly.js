@@ -1,6 +1,7 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
 import Link from 'next/link';
 import styles from '../components/layout.module.css';
-import utilStyles from '../styles/utils.module.css';
 import Image from 'next/image';
 import { FliesContext } from '../context/FliesContext';
 import { useContext } from 'react';
@@ -21,27 +22,29 @@ export default function Fly(item) {
         {item.title}
 
         <br />
-        <b>Inventory:</b> {item.inventory}
-        <br />
         <b>Price:</b> ${item.price}
+        <br />
+        <b>Inventory:</b> {item.inventory}
         <br />
       </div>
       <div className={styles.buttons}>
-        <p className={utilStyles.button} onClick={() => handleAddToCart(item)}>
+        <Button
+          className={styles.addCartButton}
+          size="small"
+          variant="contained" onClick={() => handleAddToCart(item)}>
           {item.inCart < 1 ? (
-            <>
-              {`Add to Cart`}
-            </>
+            <>Add to Cart</>
           ) : (
             <>
-              {`Add to Cart (${item.inCart})`}
+              Add to Cart ({item.inCart})
             </>)}
-        </p>
+        </Button >
         <Link
           href={`/items/[id]`}
           as={`/items/${item.id}`}
         >
-          <p className={utilStyles.button}>Learn More</p>
+          <Button className={styles.learnMoreButton} size="small"
+            variant="contained">Learn More</Button>
         </Link>
       </div>
     </section>
