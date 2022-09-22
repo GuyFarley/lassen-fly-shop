@@ -78,6 +78,20 @@ I wanted to build a backend server that existed entirely on AWS. To achieve this
 
 ![web request & response cycle for Lassen Fly Shop](./public/lassen_wrrc.png)
 
+Here's how this looks in practice:
+
+**AWS API Gateway**
+
+![Screenshot of AWS API page](./public/api_ss.png)
+
+**AWS Lambda Function**
+
+![Screenshot of AWS Lambda Function page](./public/lambda_ss.png)
+
+**Dynamo DB Table**
+
+![Screenshot of DynamoDB Table](./public/dynamo_ss.png)
+
 ## Links and Resources
 
 Wireframing and Web Request/Response Cycle: <https://miro.com/app/board/uXjVPbIEoBA=/?share_link_id=781844634355>

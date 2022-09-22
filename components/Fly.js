@@ -10,9 +10,7 @@ export default function Fly(item) {
 
   const { addToCart } = useContext(FliesContext);
 
-  function handleAddToCart(item) {
-    addToCart(item);
-  }
+  const handleAddToCart = item => addToCart(item);
 
   return (
     <section className={styles.card}>
