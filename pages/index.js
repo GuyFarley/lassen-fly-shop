@@ -5,16 +5,17 @@ import styles from '../components/layout.module.css';
 import Fly from '../components/Fly.js';
 import { FliesContext } from '../context/FliesContext';
 import { useEffect, useContext } from 'react';
+import { itemList } from '../data';
 
 // initial request for all item data from database - runs at buildtime
 export async function getStaticProps() {
 
-  const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
-  const data = await res.json();
+  // const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
+  // const data = await res.json();
 
   return {
     props: {
-      allItemsData: data
+      allItemsData: itemList
     }
   }
 }
@@ -22,7 +23,6 @@ export async function getStaticProps() {
 export default function Home({ allItemsData }) {
 
   const { flies, setFlies } = useContext(FliesContext);
-
 
   useEffect(() => {
     if (flies.length < 1) {
