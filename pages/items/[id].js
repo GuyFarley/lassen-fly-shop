@@ -7,13 +7,15 @@ import Layout from '../../components/layout';
 import Image from 'next/image';
 import { FliesContext } from '../../context/FliesContext';
 import { useContext } from 'react';
+import { itemList } from '../../data';
 
 export async function getStaticProps({ params }) {
 
-  const res = await fetch(`https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies`);
-  const itemList = await res.json();
+  // const res = await fetch(`https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies`);
+  // const itemList = await res.json();
 
   const flies = itemList.filter(fly => fly.id.toString() === params.id);
+
   return {
     props: {
       fly: flies[0],
@@ -23,8 +25,8 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
 
-  const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
-  const itemList = await res.json();
+  // const res = await fetch('https://5juvutwp5d.execute-api.us-west-2.amazonaws.com/beta/flies');
+  // const itemList = await res.json();
 
   const paths = itemList.map(fly => ({
     params: {
@@ -37,7 +39,8 @@ export async function getStaticPaths() {
 export default function ItemPage({ fly }) {
 
   const { flies, addToCart } = useContext(FliesContext);
-  const stateFlies = flies.filter(flyFromState => flyFromState.id.toString() === fly.id);
+
+  const stateFlies = flies.filter(flyFromState => flyFromState.id === fly.id);
   const stateFly = stateFlies[0];
 
   // Check if fly data exists in state
